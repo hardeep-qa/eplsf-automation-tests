@@ -8,6 +8,10 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import utils.DriverFactory;
 
+/**
+ * @author Hardeep Aujla
+ *
+ */
 public class MasterHooks extends DriverFactory {
 
 	@Before

@@ -4,6 +4,10 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import utils.DriverFactory;
 
+/**
+ * @author Hardeep Aujla
+ *
+ */
 public class ApplicationFeaturesPageSteps extends DriverFactory {
 
 	@Given("^User access the application \"([^\"]*)\" features page$")

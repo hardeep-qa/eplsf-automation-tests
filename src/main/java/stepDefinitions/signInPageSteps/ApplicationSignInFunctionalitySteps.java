@@ -8,6 +8,10 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import utils.DriverFactory;
 
+/**
+ * @author Hardeep Aujla
+ *
+ */
 public class ApplicationSignInFunctionalitySteps extends DriverFactory {
 
 	@Given("^User access the application \"([^\"]*)\" signin page$")

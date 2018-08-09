@@ -1,5 +1,9 @@
 package utils;
 
+/**
+ * @author Hardeep Aujla
+ *
+ */
 public class Constant {
 
 	/** Config Properties file **/

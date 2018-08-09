@@ -3,6 +3,10 @@ package stepDefinitions.homePageSteps;
 import cucumber.api.java.en.When;
 import utils.DriverFactory;
 
+/**
+ * @author Hardeep Aujla
+ *
+ */
 public class ApplicationHomepageBodySteps extends DriverFactory {
 
 	@When("^User clicks on the first Sign up - it's FREE button$")

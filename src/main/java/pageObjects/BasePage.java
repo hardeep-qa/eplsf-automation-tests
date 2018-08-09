@@ -20,6 +20,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utils.DriverFactory;
 
+/**
+ * @author Hardeep Aujla
+ *
+ */
 public class BasePage extends DriverFactory {
 	protected WebDriverWait wait;
 	protected JavascriptExecutor jsExecutor;

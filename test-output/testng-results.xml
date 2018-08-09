@@ -1,20 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="1" total="6" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Cucumber Framework" duration-ms="26757" started-at="2018-07-26T04:12:27Z" finished-at="2018-07-26T04:12:53Z">
+  <suite name="Cucumber Framework" duration-ms="475395" started-at="2018-08-09T04:32:53Z" finished-at="2018-08-09T04:40:49Z">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.MainRunner@3f49dace]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Cucumber Tests" duration-ms="26757" started-at="2018-07-26T04:12:27Z" finished-at="2018-07-26T04:12:53Z">
+    <test name="Cucumber Tests" duration-ms="475395" started-at="2018-08-09T04:32:53Z" finished-at="2018-08-09T04:40:49Z">
       <class name="runners.MainRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runners.MainRunner@3f49dace]" name="setUpClass" is-config="true" duration-ms="414" started-at="2018-07-26T16:12:27Z" finished-at="2018-07-26T16:12:27Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runners.MainRunner@3f49dace]" name="setUpClass" is-config="true" duration-ms="390" started-at="2018-08-09T16:32:53Z" finished-at="2018-08-09T16:32:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.MainRunner@3f49dace]" name="feature" duration-ms="25502" started-at="2018-07-26T16:12:27Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2018-07-26T16:12:53Z">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.MainRunner@3f49dace]" name="feature" duration-ms="14811" started-at="2018-08-09T16:32:54Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2018-08-09T16:33:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Application Features Page]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.MainRunner@3f49dace]" name="feature" duration-ms="132836" started-at="2018-08-09T16:33:08Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2018-08-09T16:35:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Application Footer]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.MainRunner@3f49dace]" name="feature" duration-ms="102429" started-at="2018-08-09T16:35:21Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2018-08-09T16:37:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Application Header]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.MainRunner@3f49dace]" name="feature" duration-ms="41789" started-at="2018-08-09T16:37:04Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2018-08-09T16:37:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Application Homepage Body]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.MainRunner@3f49dace]" name="feature" duration-ms="46964" started-at="2018-08-09T16:37:46Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2018-08-09T16:38:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Application Pricing Page]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runners.MainRunner@3f49dace]" name="feature" duration-ms="134910" started-at="2018-08-09T16:38:33Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2018-08-09T16:40:47Z">
           <params>
             <param index="0">
               <value>
@@ -24,10 +79,10 @@
           </params>
           <exception class="cucumber.runtime.CucumberException">
             <message>
-              <![CDATA[java.lang.AssertionError: expected [test2@test.com] but found []]]>
+              <![CDATA[org.junit.ComparisonFailure: expected:<https://[www.easypeasyforms.com]/> but was:<https://[go.easypeasyforms.com/SignIn]/>]]>
             </message>
             <full-stacktrace>
-              <![CDATA[cucumber.runtime.CucumberException: java.lang.AssertionError: expected [test2@test.com] but found []
+              <![CDATA[cucumber.runtime.CucumberException: org.junit.ComparisonFailure: expected:<https://[www.easypeasyforms.com]/> but was:<https://[go.easypeasyforms.com/SignIn]/>
 	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
 	at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -43,22 +98,18 @@
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-Caused by: java.lang.AssertionError: expected [test2@test.com] but found []
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:190)
-	at org.testng.Assert.assertEquals(Assert.java:200)
-	at stepDefinitions.signInPageSteps.ApplicationSignInFunctionalitySteps.email_textbox_should_be(ApplicationSignInFunctionalitySteps.java:117)
-	at ✽.And email textbox should be "test2@test.com"(signInPage/ApplicationSignInFunctionality.feature:96)
+Caused by: org.junit.ComparisonFailure: expected:<https://[www.easypeasyforms.com]/> but was:<https://[go.easypeasyforms.com/SignIn]/>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at stepDefinitions.homePageSteps.ApplicationHeaderSteps.user_should_redirect_on_the_homepage(ApplicationHeaderSteps.java:29)
+	at ✽.Then User should redirect on the "https://www.easypeasyforms.com/" homepage(signInPage/ApplicationSignInFunctionality.feature:14)
 ]]>
             </full-stacktrace>
           </exception> <!-- cucumber.runtime.CucumberException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:runners.MainRunner@3f49dace]" name="tearDownClass" is-config="true" duration-ms="646" started-at="2018-07-26T16:12:53Z" finished-at="2018-07-26T16:12:53Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:runners.MainRunner@3f49dace]" name="tearDownClass" is-config="true" duration-ms="1089" started-at="2018-08-09T16:40:47Z" finished-at="2018-08-09T16:40:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

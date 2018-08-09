@@ -5,6 +5,10 @@ import java.io.IOException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+/**
+ * @author Hardeep Aujla
+ *
+ */
 public class PricingPage_Page extends BasePage {
 
 	public PricingPage_Page() throws IOException {

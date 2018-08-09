@@ -4,6 +4,10 @@ import java.io.IOException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+/**
+ * @author Hardeep Aujla
+ *
+ */
 public class SignInPage_Page extends BasePage {
 
 	public SignInPage_Page() throws IOException {

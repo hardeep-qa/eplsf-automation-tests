@@ -4,6 +4,10 @@ import java.io.IOException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+/**
+ * @author Hardeep Aujla
+ *
+ */
 public class HomePage_Page extends BasePage {
 
 	// ...................APPLICATION HEADER LOCATORS....................//

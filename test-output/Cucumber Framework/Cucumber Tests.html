@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Cucumber Tests</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>5/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jul 26 16:12:27 NZST 2018</td>
+<td>Started on:</td><td>Thu Aug 09 16:32:53 NZST 2018</td>
 </tr>
-<tr><td>Total time:</td><td>26 seconds (26757 ms)</td>
+<tr><td>Total time:</td><td>475 seconds (475395 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,7 +76,7 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='runners.MainRunner.feature()'><b>feature</b><br>Test class: runners.MainRunner<br>Test method: Runs Cucumber Feature<br>Parameters: LogIn</td>
-<td><div><pre>cucumber.runtime.CucumberException: java.lang.AssertionError: expected [test2@test.com] but found []
+<td><div><pre>cucumber.runtime.CucumberException: org.junit.ComparisonFailure: expected:&lt;https://[www.easypeasyforms.com]/&gt; but was:&lt;https://[go.easypeasyforms.com/SignIn]/&gt;
 	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
 	at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -92,17 +92,13 @@ function toggleAllBoxes() {
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-Caused by: java.lang.AssertionError: expected [test2@test.com] but found []
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:190)
-	at org.testng.Assert.assertEquals(Assert.java:200)
-	at stepDefinitions.signInPageSteps.ApplicationSignInFunctionalitySteps.email_textbox_should_be(ApplicationSignInFunctionalitySteps.java:117)
-	at ?.And email textbox should be &quot;test2@test.com&quot;(signInPage/ApplicationSignInFunctionality.feature:96)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1609870752", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1609870752'><pre>cucumber.runtime.CucumberException: java.lang.AssertionError: expected [test2@test.com] but found []
+Caused by: org.junit.ComparisonFailure: expected:&lt;https://[www.easypeasyforms.com]/&gt; but was:&lt;https://[go.easypeasyforms.com/SignIn]/&gt;
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at stepDefinitions.homePageSteps.ApplicationHeaderSteps.user_should_redirect_on_the_homepage(ApplicationHeaderSteps.java:29)
+	at ?.Then User should redirect on the &quot;https://www.easypeasyforms.com/&quot; homepage(signInPage/ApplicationSignInFunctionality.feature:14)
+</pre></div><a href='#' onClick='toggleBox("stack-trace993894415", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace993894415'><pre>cucumber.runtime.CucumberException: org.junit.ComparisonFailure: expected:&lt;https://[www.easypeasyforms.com]/&gt; but was:&lt;https://[go.easypeasyforms.com/SignIn]/&gt;
 	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
 	at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -118,17 +114,46 @@ Caused by: java.lang.AssertionError: expected [test2@test.com] but found []
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-Caused by: java.lang.AssertionError: expected [test2@test.com] but found []
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:190)
-	at org.testng.Assert.assertEquals(Assert.java:200)
-	at stepDefinitions.signInPageSteps.ApplicationSignInFunctionalitySteps.email_textbox_should_be(ApplicationSignInFunctionalitySteps.java:117)
-	at ?.And email textbox should be &quot;test2@test.com&quot;(signInPage/ApplicationSignInFunctionality.feature:96)
+Caused by: org.junit.ComparisonFailure: expected:&lt;https://[www.easypeasyforms.com]/&gt; but was:&lt;https://[go.easypeasyforms.com/SignIn]/&gt;
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at stepDefinitions.homePageSteps.ApplicationHeaderSteps.user_should_redirect_on_the_homepage(ApplicationHeaderSteps.java:29)
+	at ?.Then User should redirect on the &quot;https://www.easypeasyforms.com/&quot; homepage(signInPage/ApplicationSignInFunctionality.feature:14)
 </pre></div></td>
-<td>25</td>
+<td>134</td>
+<td>runners.MainRunner@3f49dace</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='runners.MainRunner.feature()'><b>feature</b><br>Test class: runners.MainRunner<br>Test method: Runs Cucumber Feature<br>Parameters: Application Features Page</td>
+<td></td>
+<td>14</td>
+<td>runners.MainRunner@3f49dace</td></tr>
+<tr>
+<td title='runners.MainRunner.feature()'><b>feature</b><br>Test class: runners.MainRunner<br>Test method: Runs Cucumber Feature<br>Parameters: Application Footer</td>
+<td></td>
+<td>132</td>
+<td>runners.MainRunner@3f49dace</td></tr>
+<tr>
+<td title='runners.MainRunner.feature()'><b>feature</b><br>Test class: runners.MainRunner<br>Test method: Runs Cucumber Feature<br>Parameters: Application Header</td>
+<td></td>
+<td>102</td>
+<td>runners.MainRunner@3f49dace</td></tr>
+<tr>
+<td title='runners.MainRunner.feature()'><b>feature</b><br>Test class: runners.MainRunner<br>Test method: Runs Cucumber Feature<br>Parameters: Application Homepage Body</td>
+<td></td>
+<td>41</td>
+<td>runners.MainRunner@3f49dace</td></tr>
+<tr>
+<td title='runners.MainRunner.feature()'><b>feature</b><br>Test class: runners.MainRunner<br>Test method: Runs Cucumber Feature<br>Parameters: Application Pricing Page</td>
+<td></td>
+<td>46</td>
 <td>runners.MainRunner@3f49dace</td></tr>
 </table><p>
 </body>

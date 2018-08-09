@@ -17,6 +17,10 @@ import pageObjects.HomePage_Page;
 import pageObjects.PricingPage_Page;
 import pageObjects.SignInPage_Page;
 
+/**
+ * @author Hardeep Aujla
+ *
+ */
 public class DriverFactory {
 	public static WebDriver driver;
 	public static BasePage basePage;

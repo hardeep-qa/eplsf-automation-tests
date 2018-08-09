@@ -6,6 +6,10 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import utils.DriverFactory;
 
+/**
+ * @author Hardeep Aujla
+ *
+ */
 public class ApplicationFooterSteps extends DriverFactory {
 
 	@When("^User clicks on the Home link$")

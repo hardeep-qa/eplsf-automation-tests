@@ -5,6 +5,10 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
+/**
+ * @author Hardeep Aujla
+ *
+ */
 @RunWith(Cucumber.class)
 
 @CucumberOptions (
@@ -12,7 +16,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 		glue = {"stepDefinitions"},
 		monochrome = true,
 		dryRun = false,
-		tags = {"@current"},
+		tags = {},
 		plugin = {"pretty", "html:target/cucumber",
 				 "json:target/cucumber.json",
 				 "com.cucumber.listener.ExtentCucumberFormatter:target/report.html"}
