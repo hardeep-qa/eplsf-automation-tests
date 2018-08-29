@@ -1,4 +1,4 @@
-@ApplicationPricingPage
+@functional
 Feature: Application Pricing Page
 	Verify the functionality of the features available on the Pricing page
 	

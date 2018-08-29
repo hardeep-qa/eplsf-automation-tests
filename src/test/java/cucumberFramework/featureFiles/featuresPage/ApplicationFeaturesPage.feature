@@ -1,4 +1,4 @@
-@ApplicationFeaturesPage
+@functional
 Feature: Application Features Page
 	Verify the functionality of the features available on the features page
 	

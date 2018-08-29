@@ -3,6 +3,8 @@ package utils;
 import java.io.FileInputStream;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -16,6 +18,8 @@ import pageObjects.FeaturesPage_Page;
 import pageObjects.HomePage_Page;
 import pageObjects.PricingPage_Page;
 import pageObjects.SignInPage_Page;
+import pageObjects.SignUpPage_Page;
+import pageObjects.UserDashboardPage_Page;
 
 /**
  * @author Hardeep Aujla
@@ -28,6 +32,8 @@ public class DriverFactory {
 	public static FeaturesPage_Page featuresPage;
 	public static PricingPage_Page pricingPage;
 	public static SignInPage_Page signInPage;
+	public static SignUpPage_Page signUpPage;
+	public static UserDashboardPage_Page userDashboardPage;
 
 	public WebDriver getDriver() {
 		try {
@@ -64,6 +70,10 @@ public class DriverFactory {
 					driver.manage().window().maximize();
 				}
 				break;
+				
+			default:
+				Assert.fail("Please enter the desired browser in the properties file.");
+				break;
 			}
 		} catch (Exception e) {
 			System.out.println("Unable to load browser! - Exception: " + e.getMessage());
@@ -74,6 +84,8 @@ public class DriverFactory {
 			featuresPage = PageFactory.initElements(driver, FeaturesPage_Page.class);
 			pricingPage = PageFactory.initElements(driver, PricingPage_Page.class);
 			signInPage = PageFactory.initElements(driver, SignInPage_Page.class);
+			signUpPage = PageFactory.initElements(driver, SignUpPage_Page.class);
+			userDashboardPage = PageFactory.initElements(driver, UserDashboardPage_Page.class);
 		}
 		return driver;
 	}

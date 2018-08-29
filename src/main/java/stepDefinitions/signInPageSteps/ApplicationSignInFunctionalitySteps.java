@@ -29,7 +29,7 @@ public class ApplicationSignInFunctionalitySteps extends DriverFactory {
 		signInPage.clickOnLoginButtonOnSignInPage();
 	}
 
-	@Then("^The user should be presented the following \"([^\"]*)\" alert$")
+	@Then("^The user should be presented the following alert \"([^\"]*)\"$")
 	public void the_user_should_be_presented_the_following_alert(String errorMessage) throws Throwable {
 		Assert.assertEquals(signInPage.getErrorMessageTextOnSignInPage(), errorMessage);
 	}

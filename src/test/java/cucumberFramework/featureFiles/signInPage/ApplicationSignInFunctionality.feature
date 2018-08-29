@@ -1,7 +1,7 @@
-@EasyPeasyFormsSignInPage
+@Regression @functional @Smoke
 Feature: LogIn
 	Verify EasyPeasyForms logo functionality
-	Verify LogIn functionality with invalid valid credentials
+	Verify LogIn functionality with invalid and valid credentials
 	Verify Forgot Password link functionality
 	Verify Not Yet a Memeber Register link functionality
 	Verify Remember checkbox functionality
@@ -17,7 +17,7 @@ Scenario Outline: Verify login with invalid credentials
 	When User enter the "<email>" Email Address
 	And  User enter the "<password>" Password
 	When User clicks on the Login button on signin page
-	Then The user should be presented the following "<errorMessage>" alert
+	Then The user should be presented the following alert "<errorMessage>"
 	
 	Examples:
 	| email	   	   | password		| errorMessage 																   |
@@ -41,7 +41,7 @@ Scenario Outline: Verify Recovery Password functionality with invalid credential
 	Then The user should be presented the Password Recovery pop-up
 	And User enter the "<email>" Email Address in password recovery popup
 	When User clicks on the Recover Password button on the pop-up
-	Then The user should be presented the following "<errorMessage>" alert
+	Then The user should be presented the following  alert "<errorMessage>"
 	
 	Examples:
 	| email	   	| errorMessage 									 |

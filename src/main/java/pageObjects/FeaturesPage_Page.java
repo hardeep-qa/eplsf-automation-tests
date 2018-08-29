@@ -15,12 +15,10 @@ public class FeaturesPage_Page extends BasePage {
 		super();
 	}
 
-	// ...................APPLICATION FEATURES PAGE
-	// LOCATORS....................//
+	// ...................APPLICATION FEATURES PAGE LOCATORS....................//
 	public @FindBy(xpath = "//div[@class = 'large-4 columns']/a[@href = 'https://go.easypeasyforms.com/SignUpNow?pid=1']") WebElement link_signup_features_page;
 
-	// ...................APPLICATION FEATURES PAGE
-	// ACTIONS....................//
+	// ...................APPLICATION FEATURES PAGE ACTIONS....................//
 	public void clickOnSignupButtonOnFeaturesPage() throws Exception {
 		super.waitAndClickElement(link_signup_features_page);
 	}

@@ -1,11 +1,11 @@
-@ApplicationHeader
+@functional
 Feature: Application Header
 	Verify the functionality of links available on the Header of the application
 	
 
 Background:
 	Given User access the application "https://www.easypeasyforms.com/" homepage
-@Demo		
+		
 Scenario: Verify easypeasyforms logo functionality
 	When User clicks on the easypeasyforms logo
 	Then User should redirect on the "https://www.easypeasyforms.com/" homepage

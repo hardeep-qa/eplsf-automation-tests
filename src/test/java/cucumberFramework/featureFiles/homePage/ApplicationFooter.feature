@@ -1,4 +1,4 @@
-@ApplicationFooter
+@functional
 Feature: Application Footer
 	Verify the functionality of links available on the Footer of the application
 	

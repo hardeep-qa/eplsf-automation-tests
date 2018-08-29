@@ -1,4 +1,4 @@
-@ApplicationHomepageBody
+@functional
 Feature: Application Homepage Body
 	Verify the functionality of the features available on the Body of homepage excluding Header and Footer
 	
