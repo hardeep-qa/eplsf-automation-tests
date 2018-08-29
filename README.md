@@ -6,9 +6,9 @@
 ### Technologies Used ###
 * Maven project
 * Java programming
-* Selenium WebDriver [Know more about Selenium WebDriver](https://www.seleniumhq.org/)
+* Selenium WebDriver [Know more about Selenium WebDriver] (https://www.seleniumhq.org/)
 * Cucumber [Know more about Cucumber] (https://cucumber.io/)
-* TestNG [Know more about TestNG](https://testng.org/doc/index.html)
+* TestNG [Know more about TestNG] (https://testng.org/doc/index.html)
 
 ### Prerequisite ###
 * Java Installed and environment variable configured
