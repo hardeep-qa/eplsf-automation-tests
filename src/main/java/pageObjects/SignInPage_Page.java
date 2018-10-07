@@ -1,8 +1,9 @@
 package pageObjects;
 
-import java.io.IOException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.io.IOException;
 
 /**
  * @author Hardeep Aujla
@@ -18,7 +19,7 @@ public class SignInPage_Page extends BasePage {
 	public @FindBy(xpath = "//a[@id='lemon_logo']") WebElement Logo_EasyPeasyForms_SignIn_Page;
 	public @FindBy(xpath = "//input[@placeholder='Email Address']") WebElement Textbox_EmailAddress_SignIn_Page;
 	public @FindBy(xpath = "//input[@placeholder='Password']") WebElement Textbox_Password_SignIn_Page;
-	public @FindBy(id = "remember") WebElement Checkbox_Remember_SignIn_Page;
+	public @FindBy(xpath = "//div[@class='remember_checkbox']") WebElement Checkbox_Remember_SignIn_Page;
 	public @FindBy(xpath = "//a[@href='javascript:void(0);'][contains(text(),'Forgot Password?')]") WebElement Link_ForgotPassword_SignIn_Page;
 	public @FindBy(xpath = "//h5[@id='modalTitle']") WebElement Text_PasswordRecovery_PopUp_SignIn_Page;
 	public @FindBy(xpath = "//input[@type='email']") WebElement Textbox_EmailAddress_PasswordRecovery_PopUp_SignIn_Page;
@@ -90,15 +91,13 @@ public class SignInPage_Page extends BasePage {
 	public boolean rememberCheckboxOnSignInPageDefaultStatus() throws Exception {
 		return waitUntilWebElementIsVisible(Checkbox_Remember_SignIn_Page).isSelected();
 	}
+	
+	public void clickOnRememeberCheckboxOnSignInPage() throws Exception {
+		super.waitAndClickElement(Checkbox_Remember_SignIn_Page);
+	}
 
 	public boolean rememberCheckboxOnSignInPageStatus() throws Exception {
-		boolean checkbox = waitUntilWebElementIsVisible(Checkbox_Remember_SignIn_Page).isSelected();
-		if (checkbox == true) {
-			return true;
-		} else {
-			this.Checkbox_Remember_SignIn_Page.click();
-		}
-		return checkbox;
+		return waitUntilWebElementIsVisible(Checkbox_Remember_SignIn_Page).isSelected();
 	}
 
 	public void clickOnAccountIconOnUserDashboard() throws Exception {

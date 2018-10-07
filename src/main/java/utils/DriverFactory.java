@@ -14,6 +14,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 
 import pageObjects.BasePage;
+import pageObjects.BlankFormEditorPage_Page;
 import pageObjects.FeaturesPage_Page;
 import pageObjects.HomePage_Page;
 import pageObjects.PricingPage_Page;
@@ -34,6 +35,7 @@ public class DriverFactory {
 	public static SignInPage_Page signInPage;
 	public static SignUpPage_Page signUpPage;
 	public static UserDashboardPage_Page userDashboardPage;
+	public static BlankFormEditorPage_Page blankFormEditorPage; 
 
 	public WebDriver getDriver() {
 		try {
@@ -70,14 +72,11 @@ public class DriverFactory {
 					driver.manage().window().maximize();
 				}
 				break;
-				
+
 			default:
-				Assert.fail("Please enter the desired browser in the properties file.");
-				break;
+				Assert.fail("The browser name in the config.properties file should be chrome, firefox or ie");
 			}
-		} catch (Exception e) {
-			System.out.println("Unable to load browser! - Exception: " + e.getMessage());
-		} finally {
+
 			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 			basePage = PageFactory.initElements(driver, BasePage.class);
 			homePage = PageFactory.initElements(driver, HomePage_Page.class);
@@ -86,6 +85,10 @@ public class DriverFactory {
 			signInPage = PageFactory.initElements(driver, SignInPage_Page.class);
 			signUpPage = PageFactory.initElements(driver, SignUpPage_Page.class);
 			userDashboardPage = PageFactory.initElements(driver, UserDashboardPage_Page.class);
+			blankFormEditorPage = PageFactory.initElements(driver, BlankFormEditorPage_Page.class);
+		} catch (Exception e) {
+			System.out.println("Unable to load browser! - Exception: " + e.getMessage());
+
 		}
 		return driver;
 	}

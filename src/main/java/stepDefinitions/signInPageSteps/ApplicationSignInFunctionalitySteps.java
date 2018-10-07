@@ -28,12 +28,12 @@ public class ApplicationSignInFunctionalitySteps extends DriverFactory {
 	public void user_clicks_on_the_Login_button_on_signin_page() throws Throwable {
 		signInPage.clickOnLoginButtonOnSignInPage();
 	}
-
+	
 	@Then("^The user should be presented the following alert \"([^\"]*)\"$")
 	public void the_user_should_be_presented_the_following_alert(String errorMessage) throws Throwable {
 		Assert.assertEquals(signInPage.getErrorMessageTextOnSignInPage(), errorMessage);
 	}
-
+	
 	@When("^User enter the \"([^\"]*)\" Email Address$")
 	public void user_enter_the_Email_Address(String emailAddress) throws Throwable {
 		signInPage.enterEmailAddressOnSignInPage(emailAddress);
@@ -85,14 +85,14 @@ public class ApplicationSignInFunctionalitySteps extends DriverFactory {
 	    Assert.assertEquals(driver.getCurrentUrl(), signup);
 	}
 	
-	@Then("^Remember checkbox status should be unchecked by default$")
-	public void remember_checkbox_status_should_be_unchecked_by_default() throws Throwable {
-		Assert.assertEquals(signInPage.rememberCheckboxOnSignInPageDefaultStatus(), false);
-	}
-	
 	@And("^Verify Remember checkbox status$")
 	public void verify_remember_checkbox_status() throws Throwable {
-		signInPage.rememberCheckboxOnSignInPageStatus();
+		Assert.assertEquals(signInPage.rememberCheckboxOnSignInPageStatus(), false);
+	}
+	
+	@And("^User click Remember checkbox on signin page$")
+	public void user_click_Remember_checkbox_on_signin_page() throws Throwable {
+	    signInPage.clickOnRememeberCheckboxOnSignInPage();
 	}
 	
 	@When("^User clicks on the account icon on the dashboard$")

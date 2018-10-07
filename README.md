@@ -1,7 +1,7 @@
 # README #
 
 ### About the repository ###
-* This repository contains web automation tests for the project given by Easy Peasy Forms (https://www.easypeasyforms.com/) 
+* This repository contains web automation tests for the project EPLSF (https://www.easypeasyforms.com/) 
 
 ### Technologies Used ###
 * Maven project
@@ -22,4 +22,4 @@
 * Run Maven command i.e. mvn clean test
 
 ### Who do I talk to ###
-* For more information contact: Hardeep Aujla at [hardeep.qa@outlook.com](mailto:hardeep.aujla@outlook.com)
+* For more information contact: Hardeep Aujla at [hardeep.qa@outlook.com](mailto:hardeep.qa@outlook.com)

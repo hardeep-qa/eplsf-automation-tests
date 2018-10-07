@@ -2,12 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.webdriveruniversity</groupId>
-	<artifactId>CucumberFramework</artifactId>
+	<groupId>com.easypeasyforms</groupId>
+	<artifactId>eplsf-automation-tests</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>CucumberFramework</name>
+	<name>eplsf-automation-tests</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -146,7 +146,7 @@
 		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
-			<version>3.1.5</version>
+			<version>3.1.2</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.freemarker/freemarker -->

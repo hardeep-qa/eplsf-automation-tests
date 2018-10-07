@@ -1,30 +1,21 @@
 package pageObjects;
 
-import java.awt.AWTException;
-import java.io.File;
-import java.io.IOException;
-import java.util.Date;
-import java.util.List;
-
+import com.cucumber.listener.Reporter;
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.UnhandledAlertException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import utils.DriverFactory;
+
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author Hardeep Aujla
@@ -36,7 +27,7 @@ public class BasePage extends DriverFactory {
 	private static String screenshotName;
 
 	public BasePage() throws IOException {
-		this.wait = new WebDriverWait(driver, 5);
+		this.wait = new WebDriverWait(driver, 10);
 		jsExecutor = ((JavascriptExecutor) driver);
 	}
 
@@ -394,7 +385,7 @@ public class BasePage extends DriverFactory {
 	/**********************************************************************************/
 
 	/**********************************************************************************
-	 ** EXTENT FILE SCREEN SHOT
+	 ** EXTENT REPORTS
 	 **********************************************************************************/
 	private static String returnDateStamp(String fileExtension) {
 		Date d = new Date();
@@ -406,13 +397,50 @@ public class BasePage extends DriverFactory {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
 		screenshotName = returnDateStamp(".jpg");
-		FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir") + "\\output\\imgs\\" + screenshotName));
+		FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir") + "\\target\\imgs\\" + screenshotName));
+
+		Reporter.addStepLog("Taking a screenshot!");
+		Reporter.addStepLog("<br>");
+		Reporter.addStepLog("<a target=\"_blank\", href=" + returnScreenshotName() + "><img src="
+				+ returnScreenshotName() + " height=200 width=300</img></a>");
 	}
 
 	public static String returnScreenshotName() {
-		return (System.getProperty("user.dir") + "\\output\\imgs\\" + screenshotName).toString();
+		return (System.getProperty("user.dir") + "\\target\\imgs\\" + screenshotName).toString();
 	}
-	
+
+	/**********************************************************************************/
+	/**********************************************************************************/
+
+	/**********************************************************************************
+	 ** WINDOWS HANDLER
+	 **********************************************************************************/
+
+	public void switchToWindow(int waitUntilNumberOfWindows) {
+		wait.until(ExpectedConditions.numberOfWindowsToBe(waitUntilNumberOfWindows));
+		String activeWindow = driver.getWindowHandle();
+		Set<String> allWindows = driver.getWindowHandles();
+		for (String windowHandles : allWindows) {
+			if (!windowHandles.equals(activeWindow)) {
+				driver.switchTo().window(windowHandles);
+			}
+		}
+	}
+
+	/**********************************************************************************/
+	/**********************************************************************************/
+
+	/**********************************************************************************
+	 ** DRAG AND DROP
+	 **********************************************************************************/
+
+	public void dragAndDrop(WebElement elementLocatorDrag, WebElement elementLocatorDrop) {
+		WebElement webElementDrag = wait.until(ExpectedConditions.visibilityOf(elementLocatorDrag));
+		WebElement webElementDrop = wait.until(ExpectedConditions.visibilityOf(elementLocatorDrop));
+		Actions actions = new Actions(driver);
+		actions.dragAndDrop(webElementDrag, webElementDrop).build().perform();
+	}
+
 	/**********************************************************************************/
 	/**********************************************************************************/
 

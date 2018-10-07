@@ -1,4 +1,4 @@
-@Regression @functional @Current
+@Regression @functional
 Feature: User Dashboard Header
 	Verify logo functionality
 		As a user I want to navigate back to my dashboard
@@ -20,18 +20,19 @@ Feature: User Dashboard Header
 		So that I can logout from the application
 		
 Background: User is loggedIn to the application
-	Given User enter the "test2@test.com" Email Address
-	Given User enter the "test" Password
-	Given User clicks on the Login button on signin page
-	Given User should login and easypeasyforms dashboard should be displayed
+	Given User access the application "https://go.easypeasyforms.com/SignIn/" signin page
+	And User enter the "test2@test.com" Email Address
+	And User enter the "test" Password
+	And User clicks on the Login button on signin page
+	And User should login and easypeasyforms dashboard should be displayed
 	
 Scenario: Verify logo functionality
 	When User clicks on EASY PEASY LEAMON SQUEEZY FORMS logo
 	Then User should navigate to the "https://go.easypeasyforms.com/Forms/" dashboard
 	
 Scenario: Search form(s)
-	When User fill keywords (text) in search textbox
-	Then User should be able to see available forms filtered on the basis of keyword provided
+	When User fill keywords "form2" text in search textbox
+	Then User should be able to see requested "form2" form filtered on the basis of keyword provided
 	
 Scenario: Check notifications
 	When User clicks the notification Icon
@@ -44,12 +45,14 @@ Scenario: Verify options available under user droplist
 Scenario: Verify My Account link functionality
 	When User clicks the user Icon
 	And User clicks on My Account link
-	Then User should reach the user settings page
+	Then User should reach the user settings "https://go.easypeasyforms.com/Forms?settings=account" page
 		
 Scenario: Verify Logout functionality
 	When User clicks the user Icon
 	And User clicks on Logout link
-	Then User should Logout from the account
+	Then User should Logged out from the account and reached to URL: "https://go.easypeasyforms.com/Logout/"
+	When User press the back button of the browser
+	Then User should get the following alert "Access denied. You have either not signed in or your session has timed out. Please sign in."
 
 	 
 	

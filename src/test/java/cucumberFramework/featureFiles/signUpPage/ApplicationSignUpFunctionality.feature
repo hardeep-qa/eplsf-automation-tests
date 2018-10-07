@@ -10,7 +10,7 @@ Feature: SignUp
 	
 Background: Navigate to signup page
 	Given User access the application "https://go.easypeasyforms.com/SignUpNow?pid=1" signup page
-
+@test
 Scenario: Verify easypeasyforms logo functionality on signin page
 	When User clicks on the easypeasyforms logo on signin page
 	Then User should redirect on the "https://www.easypeasyforms.com/" homepage
