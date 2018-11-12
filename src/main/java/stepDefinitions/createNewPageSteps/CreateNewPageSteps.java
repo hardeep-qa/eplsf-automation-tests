@@ -1,6 +1,3 @@
-/**
- * 
- */
 package stepDefinitions.createNewPageSteps;
 
 import cucumber.api.java.en.And;
@@ -14,7 +11,7 @@ import utils.DriverFactory;
  */
 public class CreateNewPageSteps extends DriverFactory {
 	
-	String userDashboardWindow;
+	private String userDashboardWindow;
 
 	@Given("^User clicks on New Form button$")
 	public void user_clicks_on_New_Form_button() throws Throwable {
@@ -47,6 +44,25 @@ public class CreateNewPageSteps extends DriverFactory {
 		blankFormEditorPage.dragAndDropOptionListButtonToBlankForm();
 	}
 	
+	@And("^User drag the \\(image uploaded\\) button and drop it in the form$")
+	public void user_drag_the_image_uploaded_button_and_drop_it_in_the_form() throws Throwable {
+	    blankFormEditorPage.dragAndDropImageUploadButtonToBlankForm();
+	}
+
+	@And("^the \"([^\"]*)\" form should be available in the forms list$")
+	public void the_form_should_be_available_in_the_forms_list(String form) {
+		driver.switchTo().window(userDashboardWindow);
+		blankFormEditorPage.isFormAvailableInTheList(form);
+	}
+
+	@And("^User check the \"([^\"]*)\" from the list$")
+	public void user_check_the_from_the_list(String form) throws Throwable {
+		blankFormEditorPage.checkTheCheckboxOfDummyForm(form);
+	   	}
+
+	@And("^click on delete icon$")
+	public void click_on_delete_icon() throws Throwable {
+	    blankFormEditorPage.clickOnDeleteIconToDeleteDummyForm();
+	}
 	
-	// driver.switchTo().window(currentWindow)
 }

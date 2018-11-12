@@ -18,8 +18,8 @@ import java.io.File;
 @CucumberOptions(features = { "src/test/java/cucumberFramework/featureFiles/" },
 		glue = {"stepDefinitions" },
 		monochrome = true,
-		dryRun = false,
-		tags = { "@current" },
+	//	dryRun = false,
+		tags = {"@login"},
 		plugin = { "pretty","html:target/cucumber", "json:target/cucumber.json",
 				"com.cucumber.listener.ExtentCucumberFormatter:target/report.html" })
 

@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.DriverFactory;
@@ -35,19 +36,12 @@ public class BasePage extends DriverFactory {
 	 ** CLICK METHODS
 	 **********************************************************************************/
 	public void waitAndClickElement(WebElement element) throws InterruptedException {
-		boolean clicked = false;
-		int attempts = 0;
-		while (!clicked && attempts < 10) {
-			try {
-				this.wait.until(ExpectedConditions.elementToBeClickable(element)).click();
-				System.out.println("Successfully clicked on the WebElement: " + "<" + element.toString() + ">");
-				clicked = true;
-			} catch (Exception e) {
-				System.out.println("Unable to wait and click on WebElement, Exception: " + e.getMessage());
-				Assert.fail(
-						"Unable to wait and click on the WebElement, using locator: " + "<" + element.toString() + ">");
-			}
-			attempts++;
+		try {
+			this.wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+			System.out.println("Successfully clicked on the WebElement: " + "<" + element.toString() + ">");
+		} catch (Exception exception) {
+			System.out.println("Unable to wait and click on WebElement, Exception: " + exception.getMessage());
+			exception.printStackTrace();
 		}
 	}
 
@@ -241,9 +235,11 @@ public class BasePage extends DriverFactory {
 			this.wait.until(ExpectedConditions.visibilityOf(element));
 			System.out.println("WebElement is visible using locator: " + "<" + element.toString() + ">");
 			return element;
-		} catch (Exception e) {
+		} catch (Exception exception) {
 			System.out.println("WebElement is NOT visible, using locator: " + "<" + element.toString() + ">");
-			Assert.fail("WebElement is NOT visible, Exception: " + e.getMessage());
+			// Assert.fail("WebElement is NOT visible, Exception: " +
+			// exception.getMessage());
+			exception.printStackTrace();
 			return null;
 		}
 	}
@@ -417,13 +413,19 @@ public class BasePage extends DriverFactory {
 	 **********************************************************************************/
 
 	public void switchToWindow(int waitUntilNumberOfWindows) {
-		wait.until(ExpectedConditions.numberOfWindowsToBe(waitUntilNumberOfWindows));
-		String activeWindow = driver.getWindowHandle();
-		Set<String> allWindows = driver.getWindowHandles();
-		for (String windowHandles : allWindows) {
-			if (!windowHandles.equals(activeWindow)) {
-				driver.switchTo().window(windowHandles);
+		try {
+			wait.until(ExpectedConditions.numberOfWindowsToBe(waitUntilNumberOfWindows));
+			String activeWindow = driver.getWindowHandle();
+			Set<String> allWindows = driver.getWindowHandles();
+			for (String windowHandles : allWindows) {
+				if (!windowHandles.equals(activeWindow)) {
+					driver.switchTo().window(windowHandles);
+				}
 			}
+
+		} catch (Exception exception) {
+			System.out.println("Unable to switch to window, Exception occurred: " + exception.getMessage());
+			exception.printStackTrace();
 		}
 	}
 
@@ -435,10 +437,34 @@ public class BasePage extends DriverFactory {
 	 **********************************************************************************/
 
 	public void dragAndDrop(WebElement elementLocatorDrag, WebElement elementLocatorDrop) {
-		WebElement webElementDrag = wait.until(ExpectedConditions.visibilityOf(elementLocatorDrag));
-		WebElement webElementDrop = wait.until(ExpectedConditions.visibilityOf(elementLocatorDrop));
-		Actions actions = new Actions(driver);
-		actions.dragAndDrop(webElementDrag, webElementDrop).build().perform();
+		try {
+			WebElement webElementDrag = wait.until(ExpectedConditions.visibilityOf(elementLocatorDrag));
+			WebElement webElementDrop = wait.until(ExpectedConditions.visibilityOf(elementLocatorDrop));
+			Actions actions = new Actions(driver);
+			actions.dragAndDrop(webElementDrag, webElementDrop).build().perform();
+		} catch (Exception exception) {
+			System.out.println("Unable to perform drag and drop, Exception occurred: " + exception.getMessage());
+			exception.printStackTrace();
+		}
+	}
+
+	/**********************************************************************************/
+	/**********************************************************************************/
+
+	/**********************************************************************************
+	 ** SELECT FROM DROPDOWM
+	 **********************************************************************************/
+
+	public void selectFromDropdown(WebElement elementLocator, String text) {
+		try {
+			WebElement webElement = wait.until(ExpectedConditions.visibilityOf(elementLocator));
+			Select select = new Select(webElement);
+			select.selectByVisibleText(text);
+		} catch (Exception exception) {
+			System.out.println("Unable to select from dropdowm, Exception occurred: " + exception.getMessage());
+			exception.printStackTrace();
+		}
+
 	}
 
 	/**********************************************************************************/

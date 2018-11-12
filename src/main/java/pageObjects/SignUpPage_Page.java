@@ -6,7 +6,7 @@ package pageObjects;
 import java.io.IOException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
+//import org.openqa.selenium.support.ui.Select;
 
 /**
  * @author Hardeep Aujla
@@ -19,16 +19,16 @@ public class SignUpPage_Page extends BasePage {
 	}
 
 	// ...................APPLICATION SIGNIN PAGE LOCATORS....................//
-	public @FindBy(id = "lemon_logo") WebElement Logo_EasyPeasyForms_SignUp_Page;
-	public @FindBy(xpath = "//input[@placeholder='Your Name']") WebElement Textbox_Name_SignUp_Page;
-	public @FindBy(xpath = "//input[@placeholder='Email Address']") WebElement Textbox_EmailAddress_SignUp_Page;
-	public @FindBy(xpath = "//input[@placeholder='Password']") WebElement Textbox_Password_SignUp_Page;
-	public @FindBy(xpath = "//input[@placeholder='Confirm Password']") WebElement Textbox_ConfirmPassword_SignUp_Page;
-	public @FindBy(xpath = "//select[@data-link='{:Culture trigger=true:}']") WebElement Dropdown_Location_SignUp_Page;
-	public @FindBy(id = "sign_up_button") WebElement Button_SignUp_SignUp_Page;
-	public @FindBy(xpath = "//a[contains(@href, 'SignIn')]") WebElement Link_LogIn_SignUp_Page;
-	public @FindBy(xpath = "//div[@class='ajs-message ajs-error ajs-visible']") WebElement Error_Massege_SignUp_Page;
-	public @FindBy(xpath = "//a[contains(text(),'If this is you, click here to log in.')]") WebElement Link_Navigate_To_LogIn_Page_SignUp_Page;
+	private @FindBy(id = "lemon_logo") WebElement Logo_EasyPeasyForms_SignUp_Page;
+	private @FindBy(xpath = "//input[@placeholder='Your Name']") WebElement Textbox_Name_SignUp_Page;
+	private @FindBy(xpath = "//input[@placeholder='Email Address']") WebElement Textbox_EmailAddress_SignUp_Page;
+	private @FindBy(xpath = "//input[@placeholder='Password']") WebElement Textbox_Password_SignUp_Page;
+	private @FindBy(xpath = "//input[@placeholder='Confirm Password']") WebElement Textbox_ConfirmPassword_SignUp_Page;
+	private @FindBy(xpath = "//select[@data-link='{:Culture trigger=true:}']") WebElement Dropdown_Location_SignUp_Page;
+	private @FindBy(id = "sign_up_button") WebElement Button_SignUp_SignUp_Page;
+	private @FindBy(xpath = "//a[contains(@href, 'SignIn')]") WebElement Link_LogIn_SignUp_Page;
+	private @FindBy(xpath = "//div[@class='ajs-message ajs-error ajs-visible']") WebElement Error_Massege_SignUp_Page;
+	private @FindBy(xpath = "//a[contains(text(),'If this is you, click here to log in.')]") WebElement Link_Navigate_To_LogIn_Page_SignUp_Page;
 	
 	// ...................APPLICATION SIGNIN PAGE ACTIONS....................//
 	public void clickOnEasyPeasyFormsLogoOnSignUpPage() throws Exception {
@@ -76,8 +76,9 @@ public class SignUpPage_Page extends BasePage {
 	}
 	
 	public void selectLocationFromDropdownOnSignUpPage(String location) throws Exception {
-		Select select = new Select(super.waitUntilWebElementIsVisible(Dropdown_Location_SignUp_Page));
-		select.selectByVisibleText(location);
+//		Select select = new Select(super.waitUntilWebElementIsVisible(Dropdown_Location_SignUp_Page));
+//		select.selectByVisibleText(location);
+		super.selectFromDropdown(Dropdown_Location_SignUp_Page, location);
 	}
 	
 	public void clickOnTheLinkOnErrorMessageOnSignInPage() throws Exception {

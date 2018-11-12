@@ -17,10 +17,10 @@ public class PricingPage_Page extends BasePage {
 
 	// ...................APPLICATION PRICING PAGE
 	// LOCATORS....................//
-	public @FindBy(xpath = "//a[@href='https://go.easypeasyforms.com/SignUpNow?pid=6401']") WebElement button_starter_pricing_page;
-	public @FindBy(xpath = "//a[@href='https://go.easypeasyforms.com/SignUpNow?pid=6402']") WebElement button_professional_pricing_page;
-	public @FindBy(xpath = "//a[@href='https://go.easypeasyforms.com/SignUpNow?pid=6403']") WebElement button_business_pricing_page;
-	public @FindBy(xpath = "//a[@href='https://go.easypeasyforms.com/SignUpNow?pid=6404']") WebElement button_enterprise_pricing_page;
+	private @FindBy(xpath = "//a[@href='https://go.easypeasyforms.com/SignUpNow?pid=6401']") WebElement button_starter_pricing_page;
+	private @FindBy(xpath = "//a[@href='https://go.easypeasyforms.com/SignUpNow?pid=6402']") WebElement button_professional_pricing_page;
+	private @FindBy(xpath = "//a[@href='https://go.easypeasyforms.com/SignUpNow?pid=6403']") WebElement button_business_pricing_page;
+	private @FindBy(xpath = "//a[@href='https://go.easypeasyforms.com/SignUpNow?pid=6404']") WebElement button_enterprise_pricing_page;
 
 	// ...................APPLICATION PRICING PAGE ACTIONS....................//
 	public void clickOnStarterGetStartedButtonOnPricingPage() throws Exception {

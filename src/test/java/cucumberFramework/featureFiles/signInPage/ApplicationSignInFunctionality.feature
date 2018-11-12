@@ -27,7 +27,7 @@ Scenario Outline: Verify login with invalid credentials
 	| abcd.test    | abc123			| Login failed. Please check the username or correct the password you entered. |
 	
 Scenario: Verify login with valid email and valid password
-	When User enter the "test2@test.com" Email Address
+	When User enter the "test4@test.com" Email Address
 	And  User enter the "test" Password
 	When User clicks on the Login button on signin page
 	Then User should login and easypeasyforms dashboard should be displayed
@@ -51,7 +51,7 @@ Scenario Outline: Verify Recovery Password functionality with invalid credential
 Scenario: Verify Recovery Password functionality with valid credentials
 	When User clicks on Forgot Password link
 	Then The user should be presented the Password Recovery pop-up
-	And User enter the "test2@test.com" Email Address in password recovery popup
+	And User enter the "test4@test.com" Email Address in password recovery popup
 	When User clicks on the Recover Password button on the pop-up
 	Then The user should be presented the following "Password reset email sent! Please check your email." success alert
 		
@@ -63,7 +63,7 @@ Scenario: Verify Remember checkbox default status on signin page
 	Then Verify Remember checkbox status
 	
 Scenario: Verify Remember checkbox functionality when checked
-	When User enter the "test2@test.com" Email Address
+	When User enter the "test4@test.com" Email Address
 	And  User enter the "test" Password
 	And User click Remember checkbox on signin page
 	When User clicks on the Login button on signin page
@@ -71,10 +71,10 @@ Scenario: Verify Remember checkbox functionality when checked
 	When User clicks on the account icon on the dashboard
 	And user clicks on the Logout link
 	Then User should Logout and redirect on the "https://go.easypeasyforms.com/Logout/" signin page
-	And email textbox should be "test2@test.com"
+	And email textbox should be "test4@test.com"
 	
 Scenario: Verify Remember checkbox functionality when unchecked
-	When User enter the "test2@test.com" Email Address
+	When User enter the "test4@test.com" Email Address
 	And  User enter the "test" Password
 	When User clicks on the Login button on signin page
 	Then User should login and easypeasyforms dashboard should be displayed

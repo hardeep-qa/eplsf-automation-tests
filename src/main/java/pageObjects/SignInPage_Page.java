@@ -16,21 +16,21 @@ public class SignInPage_Page extends BasePage {
 	}
 
 	// ...................APPLICATION SIGNIN PAGE LOCATORS....................//
-	public @FindBy(xpath = "//a[@id='lemon_logo']") WebElement Logo_EasyPeasyForms_SignIn_Page;
-	public @FindBy(xpath = "//input[@placeholder='Email Address']") WebElement Textbox_EmailAddress_SignIn_Page;
-	public @FindBy(xpath = "//input[@placeholder='Password']") WebElement Textbox_Password_SignIn_Page;
-	public @FindBy(xpath = "//div[@class='remember_checkbox']") WebElement Checkbox_Remember_SignIn_Page;
-	public @FindBy(xpath = "//a[@href='javascript:void(0);'][contains(text(),'Forgot Password?')]") WebElement Link_ForgotPassword_SignIn_Page;
-	public @FindBy(xpath = "//h5[@id='modalTitle']") WebElement Text_PasswordRecovery_PopUp_SignIn_Page;
-	public @FindBy(xpath = "//input[@type='email']") WebElement Textbox_EmailAddress_PasswordRecovery_PopUp_SignIn_Page;
-	public @FindBy(xpath = "//button[@id='reset_password']") WebElement Button_RecoverPassword_PopUp_SignIn_Page;
-	public @FindBy(xpath = "//button[@id='login_button']") WebElement Button_Login_SignIn_Page;
-	public @FindBy(xpath = "//strong[contains(text(),'Register')]") WebElement Link_Register_SignIn_Page;
-	public @FindBy(xpath = "//div[@class='ajs-message ajs-error ajs-visible']") WebElement Error_Massege_SignIn_Page;
-	public @FindBy(xpath = "//div[@class='ajs-message ajs-success ajs-visible']") WebElement Success_Massege_SignIn_Page;
-	public @FindBy(xpath = "//h1[@id='page_title_heading']") WebElement Default_Group_Text_After_SignIn;
-	public @FindBy(xpath = "//a[@id='toggle_user_settings']//i[@class='fa fa-user fa-1x']") WebElement Icon_Account_UserDashboard_After_SignIn;
-	public @FindBy(xpath = "//a[contains(text(),'Logout')]") WebElement Link_LogOut_UserDashboard_After_SignIn;
+	private @FindBy(xpath = "//a[@id='lemon_logo']") WebElement Logo_EasyPeasyForms_SignIn_Page;
+	private @FindBy(xpath = "//input[@placeholder='Email Address']") WebElement Textbox_EmailAddress_SignIn_Page;
+	private @FindBy(xpath = "//input[@placeholder='Password']") WebElement Textbox_Password_SignIn_Page;
+	private @FindBy(xpath = "//div[@class='remember_checkbox']") WebElement Checkbox_Remember_SignIn_Page;
+	private @FindBy(xpath = "//a[@href='javascript:void(0);'][contains(text(),'Forgot Password?')]") WebElement Link_ForgotPassword_SignIn_Page;
+	private @FindBy(xpath = "//h5[@id='modalTitle']") WebElement Text_PasswordRecovery_PopUp_SignIn_Page;
+	private @FindBy(xpath = "//input[@type='email']") WebElement Textbox_EmailAddress_PasswordRecovery_PopUp_SignIn_Page;
+	private @FindBy(xpath = "//button[@id='reset_password']") WebElement Button_RecoverPassword_PopUp_SignIn_Page;
+	private @FindBy(xpath = "//button[@id='login_button']") WebElement Button_Login_SignIn_Page;
+	private @FindBy(xpath = "//strong[contains(text(),'Register')]") WebElement Link_Register_SignIn_Page;
+	private @FindBy(xpath = "//div[@class='ajs-message ajs-error ajs-visible']") WebElement Error_Massege_SignIn_Page;
+	private @FindBy(xpath = "//div[@class='ajs-message ajs-success ajs-visible']") WebElement Success_Massege_SignIn_Page;
+	private @FindBy(xpath = "//h1[@id='page_title_heading']") WebElement Default_Group_Text_After_SignIn;
+	private @FindBy(xpath = "//a[@id='toggle_user_settings']//i[@class='fa fa-user fa-1x']") WebElement Icon_Account_UserDashboard_After_SignIn;
+	private @FindBy(xpath = "//a[contains(text(),'Logout')]") WebElement Link_LogOut_UserDashboard_After_SignIn;
 
 	// ...................APPLICATION SIGNIN PAGE ACTIONS....................//
 	public void clickOnEasyPeasyFormsLogoOnSignInPage() throws Exception {

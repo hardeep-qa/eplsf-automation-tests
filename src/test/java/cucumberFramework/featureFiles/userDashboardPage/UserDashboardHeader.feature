@@ -21,7 +21,7 @@ Feature: User Dashboard Header
 		
 Background: User is loggedIn to the application
 	Given User access the application "https://go.easypeasyforms.com/SignIn/" signin page
-	And User enter the "test2@test.com" Email Address
+	And User enter the "test4@test.com" Email Address
 	And User enter the "test" Password
 	And User clicks on the Login button on signin page
 	And User should login and easypeasyforms dashboard should be displayed
